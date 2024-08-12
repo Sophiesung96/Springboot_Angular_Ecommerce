@@ -1,4 +1,4 @@
-package com.example.springbootangularecommerce.entitiy;
+package com.example.springbootangularecommerce.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @Entity
 @Table(name="state")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
