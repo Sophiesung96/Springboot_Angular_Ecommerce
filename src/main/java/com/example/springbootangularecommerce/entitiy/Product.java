@@ -20,6 +20,12 @@ import java.util.Date;
 @Data
 public class Product {
 
+    //When to annotate a variable with @JoinColumn and @ManyToOne:
+    //The entity that has direct control over the relationship.
+    //It contains the foreign key column in the database.
+    //It is responsible for the actual linkage between the entities.
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
