@@ -2,16 +2,15 @@ package com.example.springbootangularecommerce.entitiy;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 
 @Entity
 @Table(name="product_category")
 @Getter
-@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductCategory {
 
     @Id
