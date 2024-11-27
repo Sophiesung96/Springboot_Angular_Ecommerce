@@ -1,7 +1,7 @@
 package com.example.springbootangularecommerce.config;
 
-import com.example.springbootangularecommerce.entitiy.Product;
-import com.example.springbootangularecommerce.entitiy.ProductCategory;
+import com.example.springbootangularecommerce.entity.Product;
+import com.example.springbootangularecommerce.entity.ProductCategory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
