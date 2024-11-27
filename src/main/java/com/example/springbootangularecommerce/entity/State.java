@@ -2,14 +2,15 @@ package com.example.springbootangularecommerce.entitiy;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Entity
 @Table(name="state")
-@Data
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class State  {
 
     //When to annotate a variable with @JoinColumn and @ManyToOne:
@@ -29,4 +30,5 @@ public class State  {
     @JoinColumn(name = "country_id")
     @Schema(description = "A country comprises of many states",required = true)
     private Country country;
+
 }

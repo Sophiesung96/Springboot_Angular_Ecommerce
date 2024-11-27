@@ -2,10 +2,7 @@ package com.example.springbootangularecommerce.entitiy;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +14,10 @@ import java.util.Date;
 
 @Entity
 @Table(name="product")
-@Data
+@Getter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 
     //When to annotate a variable with @JoinColumn and @ManyToOne:
