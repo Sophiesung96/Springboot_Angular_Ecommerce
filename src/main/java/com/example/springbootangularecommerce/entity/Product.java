@@ -1,4 +1,5 @@
-package com.example.springbootangularecommerce.entitiy;
+package com.example.springbootangularecommerce.entity;
+import com.example.springbootangularecommerce.entity.*;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
@@ -15,15 +16,12 @@ import java.util.Date;
 @Entity
 @Table(name="product")
 @Getter
+@Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "Product entity")
 public class Product {
-
-    //When to annotate a variable with @JoinColumn and @ManyToOne:
-    //The entity that has direct control over the relationship.
-    //It contains the foreign key column in the database.
-    //It is responsible for the actual linkage between the entities.
 
 
     @Id
@@ -36,11 +34,11 @@ public class Product {
     @Schema(description = "Product's category",example = "Mugs",required = true)
     private ProductCategory category;
 
-    @Column(name = "sku")
+    @Column(name = "sku",nullable = false)
     @Schema(description = "sku",required = true)
     private String sku;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     @Schema(description = "Product's name",example = "The introduction of JAVA 8",required = true)
     private String name;
 
@@ -48,7 +46,7 @@ public class Product {
     @Schema(description = "Product's description", example = "This book is about JAVA　８",required = true)
     private String description;
 
-    @Column(name = "unit_price")
+    @Column(name = "unit_price",nullable = false)
     @Schema(description = "Product's unit price",example = "$20.99",required = true)
     private BigDecimal unitPrice;
 
@@ -60,7 +58,7 @@ public class Product {
     @Schema(description = "Product's status",example = "true",required = true)
     private boolean active;
 
-    @Column(name = "units_in_stock")
+    @Column(name = "units_in_stock",nullable = false)
     @Schema(description = "Product's units in stock",example = "1",required = true)
     private int unitsInStock;
 

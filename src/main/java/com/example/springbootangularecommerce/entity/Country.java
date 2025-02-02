@@ -1,7 +1,7 @@
-package com.example.springbootangularecommerce.entitiy;
+package com.example.springbootangularecommerce.entity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
@@ -9,6 +9,10 @@ import java.util.List;
 @Entity
 @Table(name="country")
 @Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Country {
 
     @Id
@@ -29,14 +33,7 @@ public class Country {
     @Schema(description = "The states belong to the Country", required = true)
     private  List<State> states;
 
-    public Country(int id, String name, String code, List<State> states) {
-        this.id = id;
-        this.name = name;
-        this.code = code;
-        this.states = states;
-    }
 
-    public Country() {
-    }
+
 }
 
