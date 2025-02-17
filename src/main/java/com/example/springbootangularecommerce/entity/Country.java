@@ -19,7 +19,7 @@ public class Country {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
     @Schema(description = "The unique identifier of Country", required = true)
-    private int id;
+    private Integer id;
 
     @Column(name = "name")
     @Schema(description = "The Country's name", example = "The United States of America", required = true)

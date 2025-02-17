@@ -23,7 +23,7 @@ public class State  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @Schema(description = "The unique identifier of State",required = true)
-    private int id;
+    private Integer id;
     @Column(name = "name")
     @Schema(description = "The name of the state",example = "New York", required = true)
     private String name;
