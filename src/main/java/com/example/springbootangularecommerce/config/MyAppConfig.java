@@ -6,9 +6,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 public class MyAppConfig implements WebMvcConfigurer {
 
-    @Value("${spring.rest.base-path}")
-    private String [] allowedOrigins;
     @Value("${allowed-origin)}")
+    private String [] allowedOrigins;
+    @Value("${spring.rest.base-path}")
     private String basePath;
 
     @Override

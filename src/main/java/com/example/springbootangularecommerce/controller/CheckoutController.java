@@ -2,8 +2,11 @@ package com.example.springbootangularecommerce.controller;
 
 import com.example.springbootangularecommerce.Service.CheckoutService;
 import com.example.springbootangularecommerce.Service.IdempotencyService;
+import com.example.springbootangularecommerce.dto.PaymentInfo;
 import com.example.springbootangularecommerce.dto.Purchase;
 import com.example.springbootangularecommerce.dto.PurchaseResponse;
+import com.stripe.exception.StripeException;
+import com.stripe.model.PaymentIntent;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -14,7 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("http://localhost:4200")
+
 @RestController
 @RequestMapping("/api/checkout")
 @Tag(name = "", description = "")
@@ -53,6 +56,13 @@ public class CheckoutController {
         idempotencyService.storeResponse(idempotencyKey,purchaseResponse);
 
        return  ResponseEntity.ok().headers(headers).body(purchaseResponse);
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<String> createPaymentIntent(@RequestBody PaymentInfo paymentInfo) throws StripeException {
+        PaymentIntent paymentIntent=checkoutService.createPaymentIntent(paymentInfo);
+        String paymentStr=paymentIntent.toJson();
+        return new ResponseEntity<>(paymentStr,HttpStatus.OK);
     }
     
 }
